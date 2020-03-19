@@ -68,7 +68,7 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 #Set image for lockscreen
-exec --no-startup-id betterlockscreen -u ~/.i3/lock
+exec --no-startup-id betterlockscreen -u ~/.wallpapers/1.jpg
 
 #lockscreen
 bindsym $mod+Shift+x exec betterlockscreen -l
@@ -176,7 +176,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/03.jpg
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/4.jpg
 
 # Compton
 exec_always compton -f
@@ -232,8 +232,8 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 
-// fix no volume issue
+# fix no volume issue
 exec pulseaudio --start
 
-// blueman applet
+# blueman applet
 exec --no-startup-id /usr/bin/blueman-applet
