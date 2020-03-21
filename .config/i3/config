@@ -93,8 +93,12 @@ set $ws5 "5: "
 #Office
 set $ws6 "6: "
 
+# Telegram
+set $ws7 "7: "
+
 #Mail
-set $ws10 "10: "
+set $ws10 "10: "
+
 
 #settings for some applications
 #use xprop to get classes for the applications
@@ -105,6 +109,7 @@ assign [class="vlc"] $ws5
 assign [class="Wps"] $ws6
 assign [class="Spotify"] $ws9
 assign [class="Mailspring"] $ws10
+assign [class="TelegramDesktop"] $ws7
 
 #float some windows by default
 for_window [class="Gnome-terminal"] floating enable, move position center resize set 800 500
@@ -118,7 +123,7 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace 7
+bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $ws10
@@ -130,7 +135,7 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $ws10
@@ -176,7 +181,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/wallpapers/4.jpg
+exec_always --no-startup-id feh --bg-fill ~/.wallpapers/4.jpg
 
 # Compton
 exec_always compton -f
@@ -214,8 +219,11 @@ client.placeholder      #ffffff #ffffff #ffffff #ffffff   #ffffff
 client.background       #ffffff
 
 # BRIGHTNESS
-bindsym XF86MonBrightnessUp exec xrandr --output eDP-1-1 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')+0.1" | bc) 
-bindsym XF86MonBrightnessDown exec xrandr --output eDP-1-1 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')-0.1" | bc)
+#bindsym XF86MonBrightnessUp exec xrandr --output eDP-1-1 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')+0.1" | bc) 
+#bindsym XF86MonBrightnessDown exec xrandr --output eDP-1-1 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')-0.1" | bc)
+
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume

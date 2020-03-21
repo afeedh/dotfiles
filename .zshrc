@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+ export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -59,8 +59,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git archlinux extract
+  git archlinux extract virtualenv
 )
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,5 +92,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias digital='ssh shady@139.59.13.182'
+alias athena='ssh afeedh_b170282cs@192.168.40.99'
+alias server='139.59.13.182'
+alias login='cd ~/login && python3 make_data.py && cd ..'
+alias lognit='cd ~/login && python2 log.py && cd ..'
+alias checklog='cd ~/login && python2 check.py && cd ..'
+alias hotspot="sudo create_ap wlo1 wlo1 C_Hostel_Bathroom 15931593"
+alias vpn="sshuttle -r shady@139.59.13.182 --dns 0/0 -x 139.59.13.182"
+alias vpn_athena="sshuttle -r afeedh_b170282cs@192.168.40.99 --dns 0/0 -x 192.168.40.99"
 
 
