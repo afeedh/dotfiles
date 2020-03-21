@@ -1,20 +1,8 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
- export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# Apply powerlevel9k theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,11 +46,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git archlinux extract virtualenv
-)
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time virtualenv)
+plugins=(
+  git extract virtualenv
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,18 +67,12 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# -------------------------------- POWERLEVEL ---------------------------------
 
-# some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -105,4 +86,41 @@ alias hotspot="sudo create_ap wlo1 wlo1 C_Hostel_Bathroom 15931593"
 alias vpn="sshuttle -r shady@139.59.13.182 --dns 0/0 -x 139.59.13.182"
 alias vpn_athena="sshuttle -r afeedh_b170282cs@192.168.40.99 --dns 0/0 -x 192.168.40.99"
 
+
+
+# -------------------------------- POWERLEVEL ---------------------------------
+
+POWERLEVEL9K_MODE=nerdfont-complete
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K=truncate_beginning
+POWERLEVEL9K_TIME_BACKGROUND=black
+POWERLEVEL9K_TIME_FOREGROUND=white
+POWERLEVEL9K_TIME_FORMAT=%D{%I:%M}
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND=black
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND=green
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=black
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=yellow
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=white
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=black
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=blue
+POWERLEVEL9K_FOLDER_ICON=
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_VCS_UNTRACKED_ICON=●
+POWERLEVEL9K_VCS_UNSTAGED_ICON=±
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=↓
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=↑
+POWERLEVEL9K_VCS_COMMIT_ICON=' '
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{blue}╭─%F{red}'
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{blue}╰%f '
+POWERLEVEL9K_CUSTOM_OS_ICON='echo  $(whoami) '
+POWERLEVEL9K_CUSTOM_OS_ICON_BACKGROUND=red
+POWERLEVEL9K_CUSTOM_OS_ICON_FOREGROUND=black
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_os_icon dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time virtualenv)
 
